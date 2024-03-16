@@ -1,0 +1,39 @@
+@import "../../assets/styles/variables.scss";
+@import "../../assets/styles/layout.scss";
+
+.select {
+  margin-top: 20px;
+  position: relative;
+  cursor: pointer;
+  &_view {
+    display: block;
+    width: max-content;
+    margin-bottom: 5px;
+    padding: 3px 10px;
+    border-radius: 8px;
+    transition: 0.3s;
+    &.active {
+      background: #2e2e2d;
+      color: var(--color-2);
+    }
+
+  }
+  &_lists {
+    position: absolute;
+    top: calc(100% + 5px);
+    display: none;
+    &.active {
+      display: block;
+    }
+  }
+  &_list {
+    width: max-content;
+    padding: 3px 10px;
+    border-radius: 8px;
+    margin-bottom: 5px;
+    transition: 0.3s;
+    &:hover {
+      transform: scale(1.06);
+    }
+  }
+}

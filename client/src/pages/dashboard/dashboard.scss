@@ -1,0 +1,33 @@
+@import "../../assets/styles/layout.scss";
+.dashboard {
+  width: 100%;
+  padding: 25px;
+  display: flex;
+  overflow-x: auto;
+  @include mobile {
+    flex-wrap: wrap;
+    overflow-x: hidden;
+    display: flex;
+  }
+  &_box {
+    width: 25%;
+    min-width: 160px;
+    margin-right: 50px;
+    background: #2e2e2d;
+    height: max-content;
+    border-radius: 8px;
+    @include mobile {
+      width: 100%;
+      margin-right: 0;
+    }
+  }
+  &_title {
+    text-align: center;
+    margin-top: 15px;
+  }
+  &_col {
+    text-align: center;
+    font-size: 30px;
+    margin: 15px 0;
+  }
+}

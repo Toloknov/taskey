@@ -1,0 +1,129 @@
+@import "../../assets/styles/variables.scss";
+@import "../../assets/styles/layout.scss";
+.timer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: max-content;
+  height: max-content;
+  position: relative;
+  padding: 20px;
+  margin-top: 30px;
+  @include small-tablet {
+    padding: 15px;
+  }
+  @include mobile {
+    padding: 10px;
+    margin: 50px auto;
+  }
+
+  &_minute {
+    font-size: 70px;
+    @include tablet {
+      font-size: 50px;
+    }
+    @include mobile {
+      font-size: 30px;
+    }
+  }
+
+  &_second {
+    font-size: 70px;
+    @include tablet {
+      font-size: 50px;
+    }
+    @include mobile {
+      font-size: 30px;
+    }
+  }
+  &_colon {
+    font-size: 70px;
+    @include tablet {
+      font-size: 50px;
+    }
+    @include mobile {
+      font-size: 30px;
+    }
+  }
+  &_btn-start,
+  &_btn-pause {
+    cursor: pointer;
+    background-color: transparent;
+    position: absolute;
+    top: calc(100% - 20px);
+    right: 50%;
+    transform: translateX(50%);
+    &:disabled .timer_icon {
+      cursor: auto;
+    }
+  }
+  &_btn-reset {
+    cursor: pointer;
+    background-color: transparent;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transition: transform 0.5s;
+    &:active {
+      transform: rotate(180deg);
+    }
+  }
+
+  &_box {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    margin-bottom: 5px;
+  }
+  &_step {
+    position: relative;
+    width: 15px;
+    height: 15px;
+    border-radius: 4px;
+    border: 1px solid #2e2e2d;
+    @include small-tablet {
+      width: 12px;
+      height: 12px;
+    }
+    @include mobile {
+      width: 10px;
+      height: 10px;
+    }
+    margin-right: 7px;
+    &.start::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 40%;
+      height: 100%;
+      background-color: var(--color-3);
+      border-top-left-radius: 4px;
+      border-bottom-left-radius: 4px;
+    }
+    &.passed {
+      background-color: var(--color-3);
+      border-radius: 4px;
+    }
+  }
+  &_btn {
+    cursor: pointer;
+    background: transparent;
+    width: 30px;
+    height: 30px;
+    &:disabled svg:hover {
+      fill: #2e2e2d;
+      cursor: auto;
+    }
+    &:first-child {
+      transform: rotate(180deg);
+    }
+    & svg {
+      transition: 0.3s;
+    }
+    & svg:hover {
+      fill: var(--color-3);
+    }
+  }
+}

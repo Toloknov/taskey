@@ -1,0 +1,6 @@
+@import "./layout.scss";
+
+@include font-face("Nunito", "../fonts/Nunito-Light.ttf", 300, normal);
+@include font-face("Nunito", "../fonts/Nunito-Regular.ttf", 400, normal);
+@include font-face("Nunito", "../fonts/Nunito-Medium.ttf", 500, normal);
+@include font-face("Nunito", "../fonts/Nunito-Bold.ttf", 700, normal);
