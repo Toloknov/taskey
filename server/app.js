@@ -6,8 +6,7 @@ import cors from "cors";
 import router from "./routes/index.js";
 import errorMiddleware from "./middleware/errorMiddleware.js";
 import morgan from "morgan";
-import session from "express-session";
-import passport from "passport";
+;
 import fileUpload from "express-fileupload";
 import { fileURLToPath } from "url";
 import { dirname, join } from "path";
@@ -22,6 +21,8 @@ app.use(morgan("dev"));
 app.use(cookieParser());
 app.use(cors({ origin: process.env.URL_CLIENT, credentials: true }));
 
+app.use(express.json());
+app.use("/api", router);
 app.use(errorMiddleware);
 
 const __filename = fileURLToPath(import.meta.url);
