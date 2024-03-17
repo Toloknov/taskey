@@ -1,7 +1,6 @@
 import ApiError from "../exception/errorException.js";
 import tokenService from "../services/tokenService.js";
 
-
 export default async (req, res, next) => {
   if (req.method === "OPTIONS") {
     return next();
