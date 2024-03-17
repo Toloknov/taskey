@@ -12,7 +12,9 @@ import {
 } from "../validation/index.js";
 
 const router = Router();
-
+router.get("/", (req, res) => {
+  res.send("success");
+});
 router.post("/registration", userController.register);
 router.post("/login", userController.login);
 router.post("/logout", userController.logout);
@@ -24,8 +26,8 @@ router.get("/task/:userId", taskController.getTask);
 router.patch("/updateTask", taskController.updateTask);
 router.post("/addTask/:userId", taskController.addTask);
 router.delete("/removeTask", taskController.removeTask);
-router.get("/schedule/:userId",scheduleController.getSchedule );
-router.post("/schedule",scheduleController.addSchedule );
-router.delete("/schedule",scheduleController.removeSchedule );
-router.patch("/schedule",scheduleController.updateSchedule );
+router.get("/schedule/:userId", scheduleController.getSchedule);
+router.post("/schedule", scheduleController.addSchedule);
+router.delete("/schedule", scheduleController.removeSchedule);
+router.patch("/schedule", scheduleController.updateSchedule);
 export default router;
