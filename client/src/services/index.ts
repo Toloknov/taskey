@@ -3,7 +3,7 @@ import {
   setLocalStorageToken,
   setLocalStorageUser,
 } from "./localStorage";
-export const API_URL = "https://taskey-1r64.onrender.com/api";
+export const API_URL = "http://localhost:8080/api";//https://taskey-1r64.onrender.com/api
 
 const api = axios.create({
   withCredentials: true,
