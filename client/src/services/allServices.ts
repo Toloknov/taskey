@@ -4,28 +4,7 @@ import { setLocalStorageToken, setLocalStorageUser } from "./localStorage";
 import { ITaskAdd, ITaskRemove, ITaskUpdate } from "../types/data";
 
 export default class AllService {
-  static async searchStreet(strCity: string, strStreet: string) {
-    const city = await axios.get(
-      `https://api.dmsolutions.com.ua:2661/api/Cities?sRequest=${strCity}&sLang=ru_RU`,
-      {
-        headers: {
-          Authorization:
-            "Bearer EV2kktNuRDUdN0H-7Gqyzy8JZNXAfdR5948EXlAGQS8D-fuYj-7OVPeZ4DGXuY81JtpqS_ebiP6CddBZJn96gHBMpcPWTadS_KLZvJ_rHGHtf-xW2WTsLhtFEyTL-Z-NZ_2T6-QtiE8g9IBvxv2b3rA-A8H_voeBYpJFxiilav7IdBTTPQ2_Vzt35zEjYhPCzhYdb0SyPlBbLo5tLcf8r6s0jocxn_c3EI5kJ0rogjGnjs68ru4WFdxPAhE_NDnTvvqroGvu-V5SC21pOZhshG13Hq6oNcP9avHO-rSbmjy0vt4pTuytP9fPulE3DiPjyowP61uu5n2ZutmoF5JxoFlQsVz_V3tBZvakM_TK86GYYTji7sjJJTYTDmjJLVA1frVhLR7qHursEOFJfh04uQ4ZrU5-5eWvHI3SkzHW6uv6roHhPMVB74FkKf34Lg2wkssDChwBoqkTXMK0y0wfAqICl1XkkF9Y23uDd5u2iCJn3gy811MLBxaHnYg6LgsC",
-        },
-      }
-    );
-    const { data } = await axios.get(
-      `https://api.dmsolutions.com.ua:2661/api/Streets?sRequest=${strStreet}&stMoniker=${city.data[0].st_moniker}&sLang=uk_UA`,
-      {
-        headers: {
-          Authorization:
-            "Bearer EV2kktNuRDUdN0H-7Gqyzy8JZNXAfdR5948EXlAGQS8D-fuYj-7OVPeZ4DGXuY81JtpqS_ebiP6CddBZJn96gHBMpcPWTadS_KLZvJ_rHGHtf-xW2WTsLhtFEyTL-Z-NZ_2T6-QtiE8g9IBvxv2b3rA-A8H_voeBYpJFxiilav7IdBTTPQ2_Vzt35zEjYhPCzhYdb0SyPlBbLo5tLcf8r6s0jocxn_c3EI5kJ0rogjGnjs68ru4WFdxPAhE_NDnTvvqroGvu-V5SC21pOZhshG13Hq6oNcP9avHO-rSbmjy0vt4pTuytP9fPulE3DiPjyowP61uu5n2ZutmoF5JxoFlQsVz_V3tBZvakM_TK86GYYTji7sjJJTYTDmjJLVA1frVhLR7qHursEOFJfh04uQ4ZrU5-5eWvHI3SkzHW6uv6roHhPMVB74FkKf34Lg2wkssDChwBoqkTXMK0y0wfAqICl1XkkF9Y23uDd5u2iCJn3gy811MLBxaHnYg6LgsC",
-        },
-      }
-    );
-    return data;
-  }
-
+ 
   static async registration(payload: object) {
     const { data } = await api.post("/registration", payload);
     localStorage.setItem("token", data.accessToken);
